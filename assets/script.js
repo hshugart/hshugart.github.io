@@ -27,7 +27,8 @@ function renderPublications() {
   const query = norm(search.value);
   const mode = sort.value;
 
-  const publications = sortPublications(window.PUBLICATIONS || [], mode).filter((pub) =>
+  const publicationData = Array.isArray(window.PUBLICATIONS) ? window.PUBLICATIONS : [];
+  const publications = sortPublications(publicationData, mode).filter((pub) =>
     publicationMatches(pub, query)
   );
 
@@ -71,7 +72,7 @@ function renderPublications() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function initializePage() {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
@@ -83,4 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
     sort.addEventListener("change", renderPublications);
     renderPublications();
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializePage);
+} else {
+  initializePage();
+}
