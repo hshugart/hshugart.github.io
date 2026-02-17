@@ -135,14 +135,14 @@ input[type="search"] {
 
 .pub-title {
   margin: 0 0 4px;
-  font-size: 38px;
+  font-size: 26px;
   line-height: 1.25;
 }
 
 .pub-meta {
   margin: 0 0 8px;
   color: #687188;
-  font-size: 31px;
+  font-size: 18px;
 }
 
 .pub-links {
@@ -157,7 +157,7 @@ input[type="search"] {
   padding: 3px 9px;
   background: #edf2fd;
   color: var(--chip-text);
-  font-size: 24px;
+  font-size: 14px;
   text-decoration: none;
 }
 
@@ -184,8 +184,8 @@ input[type="search"] {
 }
 
 .social-links a {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   border-radius: 8px;
   border: 1px solid #c9d0dd;
   display: inline-flex;
@@ -196,8 +196,8 @@ input[type="search"] {
 }
 
 .social-links svg {
-  width: 19px;
-  height: 19px;
+  width: 15px;
+  height: 15px;
   fill: currentColor;
 }
 
@@ -235,14 +235,14 @@ input[type="search"] {
   }
 
   .pub-title {
-    font-size: 30px;
+    font-size: 22px;
   }
 
   .pub-meta {
-    font-size: 24px;
+    font-size: 17px;
   }
 
   .pill {
-    font-size: 20px;
+    font-size: 13px;
   }
 }
