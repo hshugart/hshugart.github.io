@@ -38,7 +38,53 @@ a:hover {
   margin: 0 auto;
 }
 
-.header {
+.topbar {
+  padding: 34px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.tab:hover {
+  text-decoration: none;
+  border-color: #adc2ec;
+}
+
+.tab.is-active {
+  background: var(--accent-soft);
+  border-color: #adc2ec;
+  color: #143f8d;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 24px;
+}
+
+.hero {
+  margin: 18px 0 24px;
   display: grid;
   grid-template-columns: 148px 1fr;
   gap: 24px;
@@ -63,8 +109,9 @@ a:hover {
 }
 
 .tagline {
-  margin: 0 0 14px;
+  margin: 8px 0 12px;
   color: var(--muted);
+  font-size: 1.1rem;
 }
 
 .page-header {
