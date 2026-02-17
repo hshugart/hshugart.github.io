@@ -8,44 +8,45 @@
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="site-shell">
-      <header class="container topbar">
-        <h1 class="brand">Henry Shugart</h1>
-        <nav class="tab-nav" aria-label="Main navigation">
-          <a class="tab is-active" href="index.html">Home</a>
-          <a class="tab" href="publications.html">Publications</a>
+    <header class="container header">
+      <div class="header-left">
+        <img
+          class="avatar"
+          src="assets/profile.jpg"
+          alt="Profile photo of Henry Shugart"
+          onerror="this.src='assets/profile-placeholder.svg'; this.onerror=null;"
+        />
+      </div>
+
+      <div class="header-right">
+        <h1 class="name">Henry Shugart</h1>
+        <p class="tagline">PhD Student, Statistics &amp; Data Science — Wharton (UPenn)</p>
+
+        <nav class="buttons" aria-label="Main links">
+          <a class="btn" href="mailto:hshugart@wharton.upenn.edu">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/hshugart/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=vIDap8QAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="btn btn-secondary" href="publications.html">Publications</a>
         </nav>
-      </header>
+      </div>
+    </header>
 
-      <main class="container main-content">
-        <section class="hero">
-          <img
-            class="avatar"
-            src="assets/profile.jpg"
-            alt="Profile photo of Henry Shugart"
-            onerror="this.src='assets/profile-placeholder.svg'; this.onerror=null;"
-          />
-
-          <div>
-            <h2 class="name">Henry Shugart</h2>
-            <p class="tagline">PhD Student, Statistics &amp; Data Science — Wharton (UPenn)</p>
-            <p class="hero-text">
-              I’m Henry Shugart, a PhD student in Statistics and Data Science at Wharton (University of Pennsylvania).
-              My research interests include optimization, min-max methods, and performance estimation.
-            </p>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div class="container footer-inner">
-          <div class="social-links" aria-label="Contact links">
-            <a class="social-link" href="mailto:hshugart@wharton.upenn.edu" aria-label="Email">✉</a>
-            <a class="social-link" href="https://www.linkedin.com/in/hshugart/" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
-            <a class="social-link" href="https://scholar.google.com/citations?user=vIDap8QAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer" aria-label="Google Scholar">G</a>
-          </div>
-          <p class="copyright">© <span id="year"></span> Henry Shugart</p>
+    <main class="container">
+      <section class="section" id="bio">
+        <h2>Bio</h2>
+        <div class="card">
+          <p>
+            I’m Henry Shugart, a PhD student in Statistics and Data Science at Wharton (University of Pennsylvania).
+            My research interests include optimization, min-max methods, and performance estimation.
+          </p>
+          <p class="muted">
+            You can reach me at <a href="mailto:hshugart@wharton.upenn.edu">hshugart@wharton.upenn.edu</a>.
+          </p>
         </div>
+      </section>
+
+      <footer class="footer">
+        <span class="muted">© <span id="year"></span> Henry Shugart</span>
       </footer>
     </div>
 
