@@ -1,86 +1,86 @@
-function norm(s) {
-  return (s || "").toString().toLowerCase().trim();
+function norm(value) {
+  return (value || "").toString().trim().toLowerCase();
 }
 
-function sortPubs(pubs, mode) {
-  const arr = [...pubs];
-  if (mode === "yearAsc") arr.sort((a, b) => (a.year ?? 0) - (b.year ?? 0));
-  else if (mode === "titleAsc") arr.sort((a, b) => norm(a.title).localeCompare(norm(b.title)));
-  else arr.sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
-  return arr;
+function sortPublications(publications, mode) {
+  const copy = [...publications];
+  if (mode === "yearAsc") return copy.sort((a, b) => (a.year || 0) - (b.year || 0));
+  if (mode === "titleAsc") return copy.sort((a, b) => norm(a.title).localeCompare(norm(b.title)));
+  return copy.sort((a, b) => (b.year || 0) - (a.year || 0));
 }
 
-function matches(pub, q) {
-  if (!q) return true;
-  const hay = [pub.title, pub.authors, pub.venue, String(pub.year ?? "")].map(norm).join(" ");
-  return hay.includes(q);
+function publicationMatches(publication, query) {
+  if (!query) return true;
+  const haystack = [publication.title, publication.authors, publication.venue, publication.year]
+    .map(norm)
+    .join(" ");
+  return haystack.includes(query);
 }
 
 function renderPublications() {
-  const listEl = document.getElementById("pubList");
-  const searchEl = document.getElementById("pubSearch");
-  const sortEl = document.getElementById("pubSort");
+  const list = document.getElementById("pubList");
+  const search = document.getElementById("pubSearch");
+  const sort = document.getElementById("pubSort");
 
-  if (!listEl || !searchEl || !sortEl) return;
+  if (!list || !search || !sort) return;
 
-  const q = norm(searchEl.value);
-  const sortMode = sortEl.value;
-  const pubs = sortPubs(window.PUBLICATIONS || [], sortMode).filter((p) => matches(p, q));
+  const query = norm(search.value);
+  const mode = sort.value;
 
-  listEl.innerHTML = "";
+  const publications = sortPublications(window.PUBLICATIONS || [], mode).filter((pub) =>
+    publicationMatches(pub, query)
+  );
 
-  if (pubs.length === 0) {
-    const empty = document.createElement("div");
+  list.innerHTML = "";
+
+  if (!publications.length) {
+    const empty = document.createElement("p");
     empty.className = "empty-state";
     empty.textContent = "No publications match your search.";
-    listEl.appendChild(empty);
+    list.appendChild(empty);
     return;
   }
 
-  for (const p of pubs) {
-    const card = document.createElement("article");
-    card.className = "card pub";
+  for (const publication of publications) {
+    const item = document.createElement("article");
+    item.className = "pub";
 
-    const title = document.createElement("h2");
+    const title = document.createElement("h3");
     title.className = "pub-title";
-    title.textContent = p.title || "Untitled";
-    item.appendChild(title);
+    title.textContent = publication.title;
 
     const meta = document.createElement("p");
     meta.className = "pub-meta";
-    const bits = [];
-    if (p.authors) bits.push(p.authors);
-    if (p.venue) bits.push(p.venue);
-    if (p.year) bits.push(String(p.year));
-    meta.textContent = bits.join(" • ");
-    item.appendChild(meta);
+    meta.textContent = `${publication.authors} • ${publication.venue} • ${publication.year}`;
 
     const links = document.createElement("div");
     links.className = "pub-links";
-    (p.links || []).forEach((l) => {
-      const a = document.createElement("a");
-      a.className = "pill";
-      a.href = l.url;
-      a.target = "_blank";
-      a.rel = "noreferrer";
-      a.textContent = l.label || "Link";
-      links.appendChild(a);
-    });
-    item.appendChild(links);
 
-    listEl.appendChild(item);
+    for (const link of publication.links || []) {
+      const anchor = document.createElement("a");
+      anchor.className = "pill";
+      anchor.href = link.url;
+      anchor.textContent = link.label;
+      anchor.target = "_blank";
+      anchor.rel = "noreferrer";
+      links.appendChild(anchor);
+    }
+
+    item.append(title, meta, links);
+    list.appendChild(item);
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
 
-  const searchEl = document.getElementById("pubSearch");
-  const sortEl = document.getElementById("pubSort");
-  if (searchEl && sortEl) {
-    searchEl.addEventListener("input", renderPublications);
-    sortEl.addEventListener("change", renderPublications);
+  const search = document.getElementById("pubSearch");
+  const sort = document.getElementById("pubSort");
+
+  if (search && sort) {
+    search.addEventListener("input", renderPublications);
+    sort.addEventListener("change", renderPublications);
     renderPublications();
   }
 });
