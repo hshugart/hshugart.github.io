@@ -7,7 +7,6 @@
     <meta name="description" content="Personal website of Henry Shugart" />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
-
   <body>
     <header class="container header">
       <div class="header-left">
@@ -21,62 +20,29 @@
 
       <div class="header-right">
         <h1 class="name">Henry Shugart</h1>
-        <p class="tagline">
-          PhD Student, Statistics & Data Science — Wharton (UPenn)
-        </p>
+        <p class="tagline">PhD Student, Statistics &amp; Data Science — Wharton (UPenn)</p>
 
-        <div class="buttons">
+        <nav class="buttons" aria-label="Main links">
           <a class="btn" href="mailto:hshugart@wharton.upenn.edu">Email</a>
-          <a class="btn" href="https://www.linkedin.com/in/hshugart/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          <a class="btn btn-secondary" href="https://scholar.google.com/citations?user=vIDap8QAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer">
-            Google Scholar
-          </a>
-        </div>
+          <a class="btn" href="https://www.linkedin.com/in/hshugart/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=vIDap8QAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="btn btn-secondary" href="publications.html">Publications</a>
+        </nav>
       </div>
     </header>
 
     <main class="container">
       <section class="section" id="bio">
-        <div class="section-title-row">
-          <h2>Bio</h2>
-        </div>
+        <h2>Bio</h2>
         <div class="card">
           <p>
-            <!-- EDIT THIS -->
             I’m Henry Shugart, a PhD student in Statistics and Data Science at Wharton (University of Pennsylvania).
             My research interests include optimization, min-max methods, and performance estimation.
           </p>
           <p class="muted">
-            <!-- Optional extra line -->
             You can reach me at <a href="mailto:hshugart@wharton.upenn.edu">hshugart@wharton.upenn.edu</a>.
           </p>
         </div>
-      </section>
-
-      <section class="section" id="publications">
-        <div class="section-title-row">
-          <h2>Publications & Preprints</h2>
-
-          <div class="pub-controls">
-            <input id="pubSearch" type="search" placeholder="Search publications…" aria-label="Search publications" />
-            <select id="pubSort" aria-label="Sort publications">
-              <option value="yearDesc" selected>Sort: Year (new → old)</option>
-              <option value="yearAsc">Sort: Year (old → new)</option>
-              <option value="titleAsc">Sort: Title (A → Z)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="card">
-          <p class="muted" style="margin-top: 0;">
-            Note: Google Scholar blocks direct client-side fetching, so this list is stored on-page.
-            If you want, you can keep it synced by editing <code>assets/publications.js</code>.
-          </p>
-        </div>
-
-        <div id="pubList" class="pub-grid" aria-live="polite"></div>
       </section>
 
       <footer class="footer">
@@ -84,7 +50,6 @@
       </footer>
     </main>
 
-    <script src="assets/publications.js"></script>
     <script src="assets/script.js"></script>
   </body>
 </html>
