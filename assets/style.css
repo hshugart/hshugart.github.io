@@ -33,6 +33,12 @@ a:hover {
   text-decoration: underline;
 }
 
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   width: min(920px, calc(100% - 40px));
   margin: 0 auto;
@@ -122,11 +128,14 @@ a:hover {
   margin: 14px 0 6px;
 }
 
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.tab {
+  padding: 7px 12px;
+  color: #31415f;
+  font-weight: 600;
+  border-right: 1px solid var(--line);
 }
+.tab:last-child { border-right: 0; }
+.tab:hover { text-decoration: none; background: #f6f8ff; }
 
 .btn {
   display: inline-flex;
@@ -217,9 +226,9 @@ select:focus {
 }
 
 .pub-meta {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .pub-links {

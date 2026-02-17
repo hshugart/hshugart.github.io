@@ -31,7 +31,7 @@ function renderPublications() {
 
   if (pubs.length === 0) {
     const empty = document.createElement("div");
-    empty.className = "card";
+    empty.className = "empty-state";
     empty.textContent = "No publications match your search.";
     listEl.appendChild(empty);
     return;
@@ -44,7 +44,7 @@ function renderPublications() {
     const title = document.createElement("h2");
     title.className = "pub-title";
     title.textContent = p.title || "Untitled";
-    card.appendChild(title);
+    item.appendChild(title);
 
     const meta = document.createElement("p");
     meta.className = "pub-meta";
@@ -53,7 +53,7 @@ function renderPublications() {
     if (p.venue) bits.push(p.venue);
     if (p.year) bits.push(String(p.year));
     meta.textContent = bits.join(" • ");
-    card.appendChild(meta);
+    item.appendChild(meta);
 
     const links = document.createElement("div");
     links.className = "pub-links";
@@ -66,9 +66,9 @@ function renderPublications() {
       a.textContent = l.label || "Link";
       links.appendChild(a);
     });
-    card.appendChild(links);
+    item.appendChild(links);
 
-    listEl.appendChild(card);
+    listEl.appendChild(item);
   }
 }
 
