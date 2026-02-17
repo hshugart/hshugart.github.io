@@ -38,10 +38,10 @@ function renderPublications() {
   }
 
   for (const p of pubs) {
-    const item = document.createElement("article");
-    item.className = "pub-item";
+    const card = document.createElement("article");
+    card.className = "card pub";
 
-    const title = document.createElement("h3");
+    const title = document.createElement("h2");
     title.className = "pub-title";
     title.textContent = p.title || "Untitled";
     item.appendChild(title);
