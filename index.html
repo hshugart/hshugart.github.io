@@ -8,74 +8,48 @@
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="container nav-wrap">
-          <a class="wordmark" href="index.html">Henry Shugart</a>
+    <header class="container header">
+      <div class="header-left">
+        <img
+          class="avatar"
+          src="assets/profile.jpg"
+          alt="Profile photo of Henry Shugart"
+          onerror="this.src='assets/profile-placeholder.svg'; this.onerror=null;"
+        />
+      </div>
+
+      <div class="header-right">
+        <h1 class="name">Henry Shugart</h1>
+        <p class="tagline">PhD Student, Statistics &amp; Data Science — Wharton (UPenn)</p>
+
+        <nav class="buttons" aria-label="Main links">
+          <a class="btn" href="mailto:hshugart@wharton.upenn.edu">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/hshugart/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://scholar.google.com/citations?user=vIDap8QAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a class="btn btn-secondary" href="publications.html">Publications</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section" id="bio">
+        <h2>Bio</h2>
+        <div class="card">
+          <p>
+            I’m Henry Shugart, a PhD student in Statistics and Data Science at Wharton (University of Pennsylvania).
+            My research interests include optimization, min-max methods, and performance estimation.
+          </p>
+          <p class="muted">
+            You can reach me at <a href="mailto:hshugart@wharton.upenn.edu">hshugart@wharton.upenn.edu</a>.
+          </p>
         </div>
-      </header>
+      </section>
 
-      <main class="container main">
-        <section id="about" class="hero">
-          <img
-            class="hero-photo"
-            src="assets/profile.jpg"
-            alt="Profile photo of Henry Shugart"
-            onerror="this.src='assets/profile-placeholder.svg'; this.onerror=null;"
-          />
-
-          <div class="hero-content">
-            <p class="eyebrow">PhD Student • Wharton (UPenn)</p>
-            <h1>Henry Shugart</h1>
-            <p class="hero-summary">
-              I’m a PhD student in Statistics and Data Science at Wharton. My work focuses on optimization,
-              min-max methods, and performance estimation.
-            </p>
-          </div>
-        </section>
-
-        <section id="publications" class="publications">
-          <div class="section-head">
-            <h2>Publications &amp; Preprints</h2>
-            <div class="pub-controls">
-              <input id="pubSearch" type="search" placeholder="Search publications" aria-label="Search publications" />
-              <select id="pubSort" aria-label="Sort publications">
-                <option value="yearDesc" selected>Newest first</option>
-                <option value="yearAsc">Oldest first</option>
-                <option value="titleAsc">Title A–Z</option>
-              </select>
-            </div>
-          </div>
-          <div id="pubList" class="pub-list" aria-live="polite"></div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div class="container footer-inner">
-          <div class="social" aria-label="Contact links">
-            <a class="icon-btn" href="mailto:hshugart@wharton.upenn.edu" aria-label="Email">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h20v14H2z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 7l10 7L22 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-              <span class="sr-only">Email</span>
-            </a>
-            <a class="icon-btn" href="https://github.com/hshugart" target="_blank" rel="noreferrer" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.1.68-.22.68-.48v-1.69c-2.77.6-3.35-1.18-3.35-1.18-.45-1.15-1.1-1.45-1.1-1.45-.9-.62.07-.61.07-.61 1 .08 1.52 1.02 1.52 1.02.88 1.52 2.31 1.08 2.88.82.09-.64.35-1.08.63-1.33-2.21-.25-4.54-1.11-4.54-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.9-1.3 2.75-1.03 2.75-1.03.54 1.37.2 2.39.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.85-2.33 4.69-4.56 4.94.36.31.68.93.68 1.87v2.77c0 .27.18.58.69.48A10 10 0 0 0 12 2z" fill="currentColor"/></svg>
-              <span class="sr-only">GitHub</span>
-            </a>
-            <a class="icon-btn" href="https://www.linkedin.com/in/hshugart/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="10" r="1.2" fill="currentColor"/><path d="M7 12.5v5M11 12.5v5M11 14.2c.7-1.1 1.4-1.7 2.5-1.7 1.4 0 2.5.9 2.5 2.8v2.2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-              <span class="sr-only">LinkedIn</span>
-            </a>
-            <a class="icon-btn" href="https://scholar.google.com/citations?user=vIDap8QAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noreferrer" aria-label="Google Scholar">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5 9-5z" fill="currentColor"/><path d="M7 11v3c0 2 2 3.5 5 3.5s5-1.5 5-3.5v-3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="19" cy="15.5" r="1.7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-              <span class="sr-only">Google Scholar</span>
-            </a>
-          </div>
-          <p class="copyright">© <span id="year"></span> Henry Shugart</p>
-        </div>
+      <footer class="footer">
+        <span class="muted">© <span id="year"></span> Henry Shugart</span>
       </footer>
     </div>
 
-    <script src="assets/publications.js"></script>
     <script src="assets/script.js"></script>
   </body>
 </html>
