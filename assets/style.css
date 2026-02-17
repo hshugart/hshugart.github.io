@@ -39,6 +39,12 @@ a:hover {
   flex-direction: column;
 }
 
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   width: min(920px, calc(100% - 40px));
   margin: 0 auto;
