@@ -10,7 +10,7 @@ window.PUBLICATIONS = [
     venue: "Preprint",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2511.03052" },
-      { label: "Optimization Online", url: "https://optimization-online.org/2025/11/min-max-optimization-is-strictly-easier-than-variational-inequalities/" }
+      //{ label: "Optimization Online", url: "https://optimization-online.org/2025/11/min-max-optimization-is-strictly-easier-than-variational-inequalities/" }
     ]
   },
   {
@@ -20,7 +20,8 @@ window.PUBLICATIONS = [
     venue: "Preprint",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2505.01423" },
-      { label: "Optimization Online", url: "https://optimization-online.org/2025/05/negative-stepsizes-make-gradient-descent-ascent-converge/" }
+		{label: "Talk", url: "https://www.youtube.com/watch?v=abUGzx9Gi6U"}
+      //{ label: "Optimization Online", url: "https://optimization-online.org/2025/05/negative-stepsizes-make-gradient-descent-ascent-converge/" }
     ]
   }
 ];

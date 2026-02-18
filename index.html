@@ -3,70 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Henry Shugart</title>
-    <meta name="description" content="Personal website of Henry Shugart" />
+    <title>Henry Shugart | PhD Student at Wharton</title>
+    <meta name="description" content="Personal website of Henry Shugart, PhD Student in Statistics and Data Science at Wharton (UPenn)." />
+    <!-- Professional Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
-    <header class="top-nav">
-      <div class="container top-nav-inner">
-        <span class="site-title">Henry Shugart</span>
-      </div>
-    </header>
+    <div class="app-container">
+      <!-- Sidebar / Profile Info -->
+      <aside class="sidebar">
+        <div class="profile-card">
+          <img
+            class="avatar"
+            src="assets/profile.jpg"
+            alt="Henry Shugart"
+            onerror="this.src='assets/profile-placeholder.svg'; this.onerror=null;"
+          />
+          <h1 class="name">Henry Shugart</h1>
+          <p class="title">PhD Student in Statistics & Data Science</p>
+          <p class="affiliation">Wharton, University of Pennsylvania</p>
+          
+          <nav class="side-nav">
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#publications">Research</a>
+          </nav>
 
-    <main class="container main-content">
-      <section class="hero" aria-label="Profile">
-        <img
-          class="avatar"
-          src="assets/profile.jpg"
-          alt="Profile photo of Henry Shugart"
-          onerror="this.src='assets/profile-placeholder.svg'; this.onerror=null;"
-        />
-
-        <div class="hero-copy">
-          <p class="eyebrow">PHD STUDENT • WHARTON (UPENN)</p>
-          <h1>Henry Shugart</h1>
-          <p class="bio">
-            I’m a PhD student in Statistics and Data Science at Wharton. My work focuses
-            on optimization, min-max methods, and performance estimation.
-          </p>
-        </div>
-      </section>
-
-      <section class="publications" id="publications">
-        <div class="pub-header-row">
-          <h2>Publications &amp; Preprints</h2>
-          <div class="pub-controls">
-            <input id="pubSearch" type="search" placeholder="Search publications" aria-label="Search publications" />
-            <select id="pubSort" aria-label="Sort publications">
-              <option value="yearDesc" selected>Newest first</option>
-              <option value="yearAsc">Oldest first</option>
-              <option value="titleAsc">Title A–Z</option>
-            </select>
+          <div class="social-links">
+            <a href="mailto:hshugart@wharton.upenn.edu" title="Email">
+              <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm17 2.24-7.53 6.03a.75.75 0 0 1-.94 0L4 7.24V17h16V7.24ZM5.6 7l6.4 5.12L18.4 7H5.6Z"/></svg>
+            </a>
+            <a href="https://scholar.google.com/citations?user=vIDap8QAAAAJ" target="_blank" title="Google Scholar">
+              <svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2Zm-6 9.47V15c0 2.21 2.69 4 6 4s6-1.79 6-4v-3.53l-6 3.27-6-3.27Z"/></svg>
+            </a>
+            <a href="https://github.com/hshugart" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58l-.02-2.04c-3.34.72-4.04-1.41-4.04-1.41-.55-1.37-1.33-1.74-1.33-1.74-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.22 1.84 1.22 1.07 1.81 2.8 1.29 3.49.99.11-.76.42-1.29.76-1.59-2.67-.3-5.47-1.32-5.47-5.88 0-1.3.47-2.36 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22a11.5 11.5 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.65 1.65.24 2.87.12 3.17.76.84 1.22 1.9 1.22 3.2 0 4.57-2.8 5.58-5.48 5.88.43.37.82 1.1.82 2.21l-.01 3.28c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/hshugart/" target="_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.48 2.48 0 1 1 0 4.96 2.48 2.48 0 0 1 0-4.96ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.6 4.75 5.98V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4V9Z"/></svg>
+            </a>
           </div>
         </div>
+      </aside>
 
-        <div id="pubList" class="pub-list" aria-live="polite"></div>
-      </section>
-    </main>
+      <!-- Main Content Area -->
+      <main class="content">
+        <section id="about">
+          <h2>About Me</h2>
+          <div class="bio-text">
+            <p>
+              I am a third-year Ph.D. student in the Wharton Department of Statistics and Data Science at the University of Pennsylvania, advised by Prof. Jason Altschuler. My research interests lie broadly in optimization and machine learning, with a particular focus on min-max problems. Previously I earned my undergraduate degree from the University of North Carolina at Chapel Hill, where I majored in statistics and analytics, as well as mathematics.
+            </p>
+          </div>
+        </section>
 
-    <footer class="site-footer">
-      <div class="social-links" aria-label="Social links">
-        <a href="mailto:hshugart@wharton.upenn.edu" aria-label="Email">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm17 2.24-7.53 6.03a.75.75 0 0 1-.94 0L4 7.24V17h16V7.24ZM5.6 7l6.4 5.12L18.4 7H5.6Z"/></svg>
-        </a>
-        <a href="https://github.com/hshugart" target="_blank" rel="noreferrer" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58l-.02-2.04c-3.34.72-4.04-1.41-4.04-1.41-.55-1.37-1.33-1.74-1.33-1.74-1.09-.73.08-.72.08-.72 1.2.08 1.84 1.22 1.84 1.22 1.07 1.81 2.8 1.29 3.49.99.11-.76.42-1.29.76-1.59-2.67-.3-5.47-1.32-5.47-5.88 0-1.3.47-2.36 1.22-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3 1.22a11.5 11.5 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.65 1.65.24 2.87.12 3.17.76.84 1.22 1.9 1.22 3.2 0 4.57-2.8 5.58-5.48 5.88.43.37.82 1.1.82 2.21l-.01 3.28c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/hshugart/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.48 2.48 0 1 1 0 4.96 2.48 2.48 0 0 1 0-4.96ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.75 2.6 4.75 5.98V21h-4v-5.6c0-1.34-.03-3.06-1.9-3.06-1.9 0-2.2 1.45-2.2 2.96V21h-4V9Z"/></svg>
-        </a>
-        <a href="https://scholar.google.com/citations?user=vIDap8QAAAAJ&hl=en&oi=ao" target="_blank" rel="noreferrer" aria-label="Google Scholar">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2Zm-6 9.47V15c0 2.21 2.69 4 6 4s6-1.79 6-4v-3.53l-6 3.27-6-3.27Z"/></svg>
-        </a>
-      </div>
-      <p>© <span id="year"></span> Henry Shugart</p>
-    </footer>
+        <section id="news">
+          <h2>News</h2>
+          <ul class="news-list">
+            <li><span class="date">Nov 2025</span> New preprint: "Min-Max Optimization Is Strictly Easier Than Variational Inequalities" available on arXiv.</li>
+            <li><span class="date">May 2025</span> New preprint: "Negative Stepsizes Make Gradient-Descent-Ascent Converge" available on arXiv.</li>
+            <li><span class="date">Aug 2023</span> Started PhD at Wharton (UPenn).</li>
+          </ul>
+        </section>
+
+        <section id="publications">
+          <div class="section-header">
+            <h2>Research</h2>
+            <div class="pub-filters">
+              <input id="pubSearch" type="search" placeholder="Filter papers..." aria-label="Search publications" />
+              <select id="pubSort" aria-label="Sort publications">
+                <option value="yearDesc">Newest</option>
+                <option value="titleAsc">A–Z</option>
+              </select>
+            </div>
+          </div>
+          <div id="pubList" class="pub-list" aria-live="polite">
+            <!-- Populated by script.js -->
+          </div>
+        </section>
+
+        <footer class="main-footer">
+          <p>&copy; <span id="year"></span> Henry Shugart. Built with Vanilla CSS.</p>
+        </footer>
+      </main>
+    </div>
+
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+      <span class="sun">🌞</span>
+      <span class="moon">🌙</span>
+    </button>
 
     <script src="assets/publications.js"></script>
     <script src="assets/script.js"></script>
