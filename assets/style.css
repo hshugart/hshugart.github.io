@@ -201,6 +201,8 @@ h2 {
   margin-bottom: 32px;
   flex-wrap: wrap;
   gap: 16px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 12px;
 }
 
 .section-header h2 {
