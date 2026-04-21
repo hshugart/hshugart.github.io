@@ -6,7 +6,7 @@ window.PUBLICATIONS = [
 {
     title: "Negative Momentum for Convex-Concave Optimization",
     authors: "Henry Shugart, Shuyi Wang, Jason M. Altschuler",
-    year: 2025,
+    year: 2026,
     venue: "Preprint",
     links: [
       { label: "arXiv", url: "https://arxiv.org/abs/2604.17145" }
