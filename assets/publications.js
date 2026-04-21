@@ -3,6 +3,15 @@
 // and link out to the canonical sources.
 
 window.PUBLICATIONS = [
+{
+    title: "Negative Momentum for Convex-Concave Optimization",
+    authors: "Henry Shugart, Shuyi Wang, Jason M. Altschuler",
+    year: 2025,
+    venue: "Preprint",
+    links: [
+      { label: "arXiv", url: "https://arxiv.org/abs/2604.17145" }
+    ]
+  },
   {
     title: "Min-Max Optimization Is Strictly Easier Than Variational Inequalities",
     authors: "Henry Shugart, Jason M. Altschuler",
